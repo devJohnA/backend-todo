@@ -10,15 +10,11 @@ app.use(bodyParser.json());
 dotenv.config();
 app.use(cors());
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8000;
 const URL = process.env.MONGOURL;
 
 // Routes
 app.use('/tasklist', taskRoutes); 
-
-// app.get('/', (req, res) => {
-//     res.send('API is running 🚀');
-//   });
 
 mongoose.connect(URL).then(() => {
     console.log("MongoDB connected");
