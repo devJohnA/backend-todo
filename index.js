@@ -16,7 +16,7 @@ const URL = process.env.MONGOURL;
 // Routes
 app.use('/tasklist', taskRoutes); 
 
-app.get('/tasklist', (req, res) => {
+app.get('/', (req, res) => {
     res.send('API is running 🚀');
   });
 
