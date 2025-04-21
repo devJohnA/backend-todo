@@ -8,8 +8,7 @@ import taskRoutes from './routes/taskRoutes.js';
 const app = express();
 app.use(bodyParser.json());
 dotenv.config();
-app.use(cors({ origin: 'https://backend-todo-6oa5.onrender.com/' }));
-
+app.use(cors());
 
 const PORT = process.env.PORT;
 const URL = process.env.MONGOURL;
@@ -17,9 +16,9 @@ const URL = process.env.MONGOURL;
 // Routes
 app.use('/tasklist', taskRoutes); 
 
-app.get('/', (req, res) => {
-    res.send('API is running 🚀');
-  });
+// app.get('/', (req, res) => {
+//     res.send('API is running 🚀');
+//   });
 
 mongoose.connect(URL).then(() => {
     console.log("MongoDB connected");
