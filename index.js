@@ -8,7 +8,8 @@ import taskRoutes from './routes/taskRoutes.js';
 const app = express();
 app.use(bodyParser.json());
 dotenv.config();
-app.use(cors());
+app.use(cors({ origin: 'https://backend-todo-6oa5.onrender.com/' }));
+
 
 const PORT = process.env.PORT;
 const URL = process.env.MONGOURL;
