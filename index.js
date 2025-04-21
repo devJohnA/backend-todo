@@ -10,6 +10,10 @@ app.use(bodyParser.json());
 dotenv.config();
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.json({ message: "API is running successfully! Use /tasklist endpoints for CRUD operations." });
+  });
+  
 const PORT = process.env.PORT || 8000;
 const URL = process.env.MONGOURL;
 
