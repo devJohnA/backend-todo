@@ -15,7 +15,10 @@ const URL = process.env.MONGOURL;
 
 // Routes
 app.use('/tasklist', taskRoutes); 
-
+app.get('/', (req, res) => {
+    res.send('API is running 🚀');
+  });
+  
 mongoose.connect(URL).then(() => {
     console.log("MongoDB connected");
 
