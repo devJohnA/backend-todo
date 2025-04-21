@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 dotenv.config();
 app.use(cors());
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT;
 const URL = process.env.MONGOURL;
 
 // Routes
